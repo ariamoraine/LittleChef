@@ -7,10 +7,9 @@
 const User = require('./user');
 const OAuth = require('./oauth');
 const Recipe = require('./recipe');
+const RecipeLine = require('./recipeline');
 
 OAuth.belongsTo(User);
 User.hasOne(OAuth);
 
-
-
-module.exports = {User, Recipe};
+module.exports = {User, Recipe, RecipeLine};
