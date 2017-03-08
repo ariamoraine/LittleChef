@@ -11,6 +11,12 @@ const Recipe = db.define('recipes', {
     values: ['Dinner', 'Lunch', 'Breakfast', 'Snack']
   },
   lastMade: Sequelize.DATE,
+}, {
+  scopes: {
+    default: {
+      include: [{all: true}]
+    }
+  }
 });
 
 module.exports = Recipe;
