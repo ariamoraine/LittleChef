@@ -25,7 +25,6 @@ const ExampleApp = connect(
         <nav>
           {user ? <div> <WhoAmI/> {children} </div> : <Login/>}
         </nav>
-
       </div>
     </MuiThemeProvider>
 )
