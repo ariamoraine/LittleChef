@@ -11,6 +11,10 @@ const Recipe = db.define('recipes', {
     values: ['Dinner', 'Lunch', 'Breakfast', 'Snack']
   },
   lastMade: Sequelize.DATE,
+  photo: {
+    type: Sequelize.STRING,
+    defaultValue: "https://lorempixel.com/400/400/food",
+  }
 }, {
   scopes: {
     default: {
