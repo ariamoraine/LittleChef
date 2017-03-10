@@ -21,17 +21,15 @@ const styles = {
 }
 
 export default function (props) {
-   console.log("RECIPES", props)
 
-   const oldest = props.recipes.reduce(function(oldest, currentValue) {
-    console.log(oldest.updated_at, currentValue.updated_at)
-    const thisOldest = oldest.updated_at < currentValue.updated_at ? oldest : currentValue
-    console.log("EACH OLDEST",thisOldest)
-    return thisOldest
-   })
+    const sortedRecipes = props.recipes.sort(function(a, b) {
+      return parseFloat(a.updated_at) - parseFloat(b.updated_at)
+    }).reverse()
 
-   console.log("AFTER REDUCE", oldest)
 
+    sortedRecipes[0]['featured'] = true
+
+    console.log(sortedRecipes[0])
     return (
       <div>
         <Paper>

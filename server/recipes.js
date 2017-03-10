@@ -6,7 +6,6 @@ const sequelize = require('sequelize')
 recipeRouter.get('/', (req, res, next) => {
   Recipe.findAll({})
   .then(recipes => {
-    console.log(recipes)
     res.send(recipes)
   })
 })
