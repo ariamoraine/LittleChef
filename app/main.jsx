@@ -3,6 +3,7 @@ import React from 'react'
 import {Router, Route, IndexRedirect, browserHistory} from 'react-router'
 import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
+import axios from 'axios'
 
 //outside stuff
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -16,6 +17,7 @@ import Recipes from './components/Recipes'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import AppContainer from './containers/AppContainer'
+import { receiveRecipes } from './reducers/recipe'
 
 injectTapEventPlugin();
 
@@ -27,6 +29,14 @@ const muiTheme = getMuiTheme({
     canvasColor: white,
   }
 })
+
+const loadRecipes = (nextState, replace, done) => {
+  console.log(nextState)
+  axios.get(`/api/recipes/`)
+  .then(recipes => store.dispatch(receiveRecipes(recipes.data)))
+  .then(() => done())
+  .catch(console.error)
+}
 
 const ExampleApp = connect(
   ({ auth }) => ({ user: auth })
@@ -46,7 +56,7 @@ render (
     <Router history={browserHistory}>
       <Route path="/" component={ExampleApp}>
         <IndexRedirect to="/recipes" />
-        <Route path="/recipes" component={AppContainer} />
+        <Route path="/recipes" component={AppContainer} onEnter={loadRecipes} />
       </Route>
     </Router>
   </Provider>,

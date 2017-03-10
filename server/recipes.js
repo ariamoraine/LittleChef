@@ -2,12 +2,8 @@ const db = require('APP/db')
 const recipeRouter = require('express').Router()
 const Recipe = require('APP/db/models/recipe')
 
-recipeRouter.get('/:userId', (req, res, next) => {
-  Recipe.findAll({
-    where: {
-      user_id: req.params.userId
-    }
-  })
+recipeRouter.get('/', (req, res, next) => {
+  Recipe.findAll({})
   .then(recipes => {
     res.send(recipes)
   })

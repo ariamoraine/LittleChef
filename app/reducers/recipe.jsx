@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
     case "RECEIVE_RECIPES":
-      newState.recipes = action.recipes
+      newState.allRecipes = action.recipes
       break;
 
     default: return state;
@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
 
 // ACITON CREATOR
 
-export const receiceRecipes = (recipes) => {
+export const receiveRecipes = (recipes) => {
   return {
     type: "RECEIVE_RECIPES",
     recipes
