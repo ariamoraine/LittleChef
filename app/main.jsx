@@ -12,7 +12,7 @@ import {cyan500, darkBlack, white} from 'material-ui/styles/colors'
 
 //my stuff
 import store from './store'
-import Jokes from './components/Jokes'
+import Recipes from './components/Recipes'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 
@@ -44,8 +44,8 @@ render (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={ExampleApp}>
-        <IndexRedirect to="/jokes" />
-        <Route path="/jokes" component={Jokes} />
+        <IndexRedirect to="/recipes" />
+        <Route path="/recipes" component={Recipes} />
       </Route>
     </Router>
   </Provider>,

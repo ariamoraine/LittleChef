@@ -40,8 +40,6 @@ class Login extends React.Component{
         alignItems: 'center',
       },
       card: {
-        // height: 300,
-        // width: 600,
         border: 20,
         textAlign: 'center',
         display: 'inline-block',
