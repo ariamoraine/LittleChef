@@ -13,6 +13,7 @@ export default function (props) {
             <h1>{props.recipes[0].name}</h1>
             <img alt="Food" src={props.recipes[0].photo}/>
             <p>{props.recipes[0].updated_at}</p>
+
           </div>
         </Paper>
       </div>

@@ -12,7 +12,11 @@ const User = db.define('users', {
     validate: {
 			isEmail: true,
 			notEmpty: true,
-		}
+		},
+    phone: {
+      type: Sequelize.INTEGER,
+      allowNull: false
+    }
   },
 
   // We support oauth, so users may or may not have passwords.
