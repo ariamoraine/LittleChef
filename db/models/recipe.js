@@ -15,7 +15,7 @@ const Recipe = db.define('recipes', {
     defaultValue: 0,
   },
   photo: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     defaultValue: "https://lorempixel.com/400/400/food",
   }
 }, {
