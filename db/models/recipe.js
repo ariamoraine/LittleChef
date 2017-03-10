@@ -10,7 +10,10 @@ const Recipe = db.define('recipes', {
     type: Sequelize.ENUM,
     values: ['Dinner', 'Lunch', 'Breakfast', 'Snack']
   },
-  lastMade: Sequelize.DATE,
+  timesMade: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
   photo: {
     type: Sequelize.STRING,
     defaultValue: "https://lorempixel.com/400/400/food",
