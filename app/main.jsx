@@ -7,6 +7,8 @@ import {connect, Provider} from 'react-redux'
 //outside stuff
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import {cyan500, darkBlack, white} from 'material-ui/styles/colors'
 
 //my stuff
 import store from './store'
@@ -16,11 +18,20 @@ import WhoAmI from './components/WhoAmI'
 
 injectTapEventPlugin();
 
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: cyan500,
+    textColor: darkBlack,
+    alternateTextColor: white,
+    canvasColor: white,
+  }
+})
+
 const ExampleApp = connect(
   ({ auth }) => ({ user: auth })
 ) (
   ({ user, children }) =>
-    <MuiThemeProvider>
+    <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <nav>
           {user ? <div> <WhoAmI/> {children} </div> : <Login/>}

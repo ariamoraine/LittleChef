@@ -7,6 +7,7 @@ import {connect} from 'react-redux'
 import RaisedButton from 'material-ui/RaisedButton'
 import Paper from 'material-ui/paper'
 import TextField from 'material-ui/TextField';
+import { teal600 } from 'material-ui/styles/colors.js'
 
 
 class Login extends React.Component{
@@ -35,15 +36,24 @@ class Login extends React.Component{
       root: {
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
+        alignItems: 'center',
       },
       card: {
-        height: 300,
-        width: 600,
-        margin: 20,
+        // height: 300,
+        // width: 600,
+        border: 20,
         textAlign: 'center',
         display: 'inline-block',
+        marginTop: 100,
       },
+      form: {
+        marginBottom: 25,
+        padding: 10,
+      },
+      loginButton: {
+        clear: top,
+      }
     };
 
     return (
@@ -55,11 +65,15 @@ class Login extends React.Component{
             this.handleLogin(e, this)
           }
           } >
-          <h1 id="chefHeadTesk">Need a little chef in your life?</h1>
-          <TextField floatingLabelText="Email Address" name="username" hintText="Email Address"/>
-          <br/>
-          <TextField floatingLabelText="Password" name="password" hintText="Password" />
-          <RaisedButton label="Login" type="submit" value="Login" />
+          <div style={styles.form}>
+            <h1 id="chefHeadTesk">Need a Little Chef in your life?</h1>
+            <TextField fullWidth={true} floatingLabelText="Email Address" name="username" hintText="Email Address"/>
+            <br/>
+            <TextField fullWidth={true} floatingLabelText="Password" name="password" hintText="Password" />
+          </div>
+            <RaisedButton style={styles.loginButton} label="Login"  backgroundColor={teal600} fullWidth={true} type="submit" value="Login" />
+
+
         </form>
         }>
       </Paper>
