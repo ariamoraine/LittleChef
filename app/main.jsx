@@ -15,6 +15,7 @@ import store from './store'
 import Recipes from './components/Recipes'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
+import AppContainer from './containers/AppContainer'
 
 injectTapEventPlugin();
 
@@ -45,7 +46,7 @@ render (
     <Router history={browserHistory}>
       <Route path="/" component={ExampleApp}>
         <IndexRedirect to="/recipes" />
-        <Route path="/recipes" component={Recipes} />
+        <Route path="/recipes" component={AppContainer} />
       </Route>
     </Router>
   </Provider>,
