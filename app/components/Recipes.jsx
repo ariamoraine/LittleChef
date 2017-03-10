@@ -15,9 +15,15 @@ const styles = {
   },
   gridList: {
     width: 500,
-    height: 450,
+    // height: 450,
+    paddingBottom: 50,
     overflowY: 'auto',
+  },
+  page: {
+    marginLeft: 100,
+    marginRight: 100,
   }
+
 }
 
 export default function (props) {
@@ -32,7 +38,7 @@ export default function (props) {
     console.log(sortedRecipes[0])
     return (
       <div>
-        <Paper>
+        <Paper style={styles.page}>
           <div style={styles.root}>
             <h1 id="chefHeadTesk">Little Chef says you should make...</h1>
               <GridList
