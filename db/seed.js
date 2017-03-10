@@ -9,9 +9,9 @@ const seedUsers = () => db.Promise.map([
 
 const seedRecipes = () => db.Promise.map([
   {name: 'Pasta Night', meal: 'Dinner', lastMade: '2017-02-08 17:42:32.339-05', user_id: '1', photo: 'http://lorempixel.com/400/400/food'},
-  {name: 'Stir fry', meal: 'Dinner', lastMade: '2016-12-08 17:42:32.339-05', user_id: '2', photo: 'http://lorempixel.com/400/400/food'},
-  {name: 'Chicken and Greens', meal: 'Dinner', lastMade: '2017-01-08 17:42:32.339-05', user_id: '3', photo: 'http://lorempixel.com/400/400/food'},
-  {name: 'Popcorn', meal: 'Snack', lastMade: '2016-03-03 17:42:32.339-05', user_id: '4', photo: 'http://lorempixel.com/400/400/food'}
+  {name: 'Stir fry', meal: 'Dinner', lastMade: '2016-12-08 17:42:32.339-05', user_id: '1', photo: 'http://lorempixel.com/400/400/food'},
+  {name: 'Chicken and Greens', meal: 'Dinner', lastMade: '2017-01-08 17:42:32.339-05', user_id: '1', photo: 'http://lorempixel.com/400/400/food'},
+  {name: 'Popcorn', meal: 'Snack', lastMade: '2016-03-03 17:42:32.339-05', user_id: '1', photo: 'http://lorempixel.com/400/400/food'}
   ], recipe => db.model('recipes').create(recipe));
 
 const seedIngredients = () => db.Promise.map([
