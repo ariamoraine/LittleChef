@@ -11,7 +11,7 @@ class Recipes extends Component {
   }
 
   render() {
-
+    console.log(this)
     return (
       <div>
         <Paper>

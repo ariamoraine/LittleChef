@@ -125,7 +125,6 @@ auth.get('/whoami', (req, res) => res.send(req.user))
 auth.post('/login/local', passport.authenticate('local', { successRedirect: '/'}))
 
 auth.post('/signup', function(req, res, next){
-  console.log("Inside signup")
     User.findOrCreate({
       where: {
         email: req.body.username
