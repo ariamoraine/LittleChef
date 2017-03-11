@@ -12,6 +12,34 @@ body {
   font-size: 3em;
 }
 
+#title:hover {
+  opacity: 0;
+}
+
+#grid-box-hover {
+/*  background-color: #00897B;*/
+  /*background-color: black;*/
+  background: linear-gradient(to bottom, rgba(0, 137, 123, 0), rgba(0, 137, 123, .85), rgba(0, 137, 123, 1));
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*opacity: .25;*/
+  transition: opacity .25s;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+#grid-box-hover:hover {
+  opacity: 1;
+}
+
 /*#login {
   color: #212121;
 }*/

@@ -34,7 +34,7 @@ export default function (props) {
       <div>
         <Paper style={styles.page} zDepth={4}>
           <div style={styles.root}>
-            <span><h1 id="chefHeadTesk">Little Chef says you should make...</h1></span>
+            <span><h1 id="chefHeadTesk">Little Chef says you should...</h1></span>
               <GridList
                 cols={2}
                 cellHeight={200}
@@ -43,15 +43,18 @@ export default function (props) {
                 {props.sortedRecipes.map((recipe) => (
                   <GridTile
                     key={recipe.id}
-                    title={recipe.name}
-                    subtitle={<span><b>Last made </b>{recipe.updated_at}</span>}
-                    subtitle={<span><b>Made: </b>{recipe.timesMade} times</span>}
+                    title={`Make ${recipe.name}`}
+                    // subtitle={<span><b>Last made </b>{recipe.updated_at}</span>}
+                    // subtitle={<span><b>Made: </b>{recipe.timesMade} times</span>}
+                    subtitle={<h1 id="grid-box-hover">TEXT ME THE RECIPE</h1>}
                     titlePosition="bottom"
                     titleBackground="linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.5) 70%,rgba(0,0,0,0) 100%)"
                     cols={recipe.featured ? 2 : 1}
                     rows={recipe.featured ? 2 : 1}
                   >
+
                     <img src={recipe.photo} />
+
                   </GridTile>
                 ))}
               </GridList>
@@ -60,3 +63,5 @@ export default function (props) {
       </div>
     )
 }
+
+// <div className='grid-box-hover'><h3>{product.name}<br />${product.price}</h3></div>
