@@ -3,15 +3,19 @@ import { connect } from 'react-redux';
 import Recipes from '../components/Recipes'
 import { receiveRecipes } from '../reducers/recipe'
 
-//get user id and
-//filter recipes down to the recipe
-//component based on that user and
-//render recipe component
+function sortRecipes (recipeArray) {
+  const sortedRecipes = recipeArray.sort(function(a, b) {
+    return parseFloat(a.updated_at) - parseFloat(b.updated_at)
+  }).reverse()
+  sortedRecipes[0]['featured'] = true
+
+  return sortedRecipes
+}
 
 export default connect(
   (state) => {
     return {
-      recipes: state.recipe.allRecipes
+      sortedRecipes: sortRecipes(state.recipe.allRecipes)
     }
   }, (dispatch) => {
     return {}

@@ -12,6 +12,8 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   gridList: {
     width: 500,
@@ -23,30 +25,32 @@ const styles = {
     marginLeft: 100,
     marginRight: 100,
   }
-
 }
+
+// .flexcontainer {
+//    display: -webkit-flex;
+//    display: flex;
+//    -webkit-flex-direction: row /* works with row or column */
+//    flex-direction: row;
+//    -webkit-align-items: center;
+//    align-items: center;
+//    -webkit-justify-content: center;
+//    justify-content: center;
+// }
 
 export default function (props) {
 
-    const sortedRecipes = props.recipes.sort(function(a, b) {
-      return parseFloat(a.updated_at) - parseFloat(b.updated_at)
-    }).reverse()
-
-
-    sortedRecipes[0]['featured'] = true
-
-    console.log(sortedRecipes[0])
     return (
       <div>
         <Paper style={styles.page}>
           <div style={styles.root}>
-            <h1 id="chefHeadTesk">Little Chef says you should make...</h1>
+            <span><h1 id="chefHeadTesk">Little Chef says you should make...</h1></span>
               <GridList
                 cols={2}
                 cellHeight={200}
                 padding={1}
                 style={styles.gridList}>
-                {props.recipes.map((recipe) => (
+                {props.sortedRecipes.map((recipe) => (
                   <GridTile
                     key={recipe.id}
                     title={recipe.name}
