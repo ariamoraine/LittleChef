@@ -67,7 +67,7 @@ class Login extends React.Component{
             <h1 id="chefHeadTesk">Need a Little Chef in your life?</h1>
             <TextField fullWidth={true} floatingLabelText="Email Address" name="username" hintText="Email Address"/>
             <br/>
-            <TextField fullWidth={true} floatingLabelText="Password" name="password" hintText="Password" />
+            <TextField fullWidth={true} floatingLabelText="Password" type="password" name="password" hintText="Password" />
           </div>
             <RaisedButton style={styles.loginButton} label="Login"  backgroundColor={teal600} fullWidth={true} type="submit" value="Login" />
 

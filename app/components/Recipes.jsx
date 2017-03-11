@@ -16,33 +16,23 @@ const styles = {
     alignItems: 'center',
   },
   gridList: {
-    width: 500,
+    width: 600,
     // height: 450,
     paddingBottom: 50,
     overflowY: 'auto',
   },
   page: {
-    marginLeft: 100,
-    marginRight: 100,
+    marginLeft: 150,
+    marginRight: 150,
+    marginBottom: 50,
   }
 }
-
-// .flexcontainer {
-//    display: -webkit-flex;
-//    display: flex;
-//    -webkit-flex-direction: row /* works with row or column */
-//    flex-direction: row;
-//    -webkit-align-items: center;
-//    align-items: center;
-//    -webkit-justify-content: center;
-//    justify-content: center;
-// }
 
 export default function (props) {
 
     return (
       <div>
-        <Paper style={styles.page}>
+        <Paper style={styles.page} zDepth={4}>
           <div style={styles.root}>
             <span><h1 id="chefHeadTesk">Little Chef says you should make...</h1></span>
               <GridList
