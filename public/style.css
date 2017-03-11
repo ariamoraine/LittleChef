@@ -10,39 +10,57 @@ body {
 #chefHeadTesk {
   font-family: 'Dancing Script', cursive;
   font-size: 3em;
+  /*text-shadow:
+    -2px -2px white,
+    -2px 2px white,
+    2px -2px white,
+    2px 2px white;
+  background-size: 1px 1em;
+  */
+  box-shadow: inset 0 -0.125em white,
+   /*inset 0 -0.2em #000,*/
+   inset 0 -0.2em #00897B;
 }
 
-#title:hover {
-  opacity: 0;
+/*.text-shadow {
+  text-shadow:
+    -2px -2px white,
+    -2px 2px white,
+    2px -2px white,
+    2px 2px white;
 }
+
+.underline {
+  background-size: 1px 1em;
+  box-shadow:
+    inset 0 -0.175em white,
+    inset 0 -0.2em #000;
+  display: inline;
+}
+*/
+
+
 
 #grid-box-hover {
-/*  background-color: #00897B;*/
-  /*background-color: black;*/
-  background: linear-gradient(to bottom, rgba(0, 137, 123, 0), rgba(0, 137, 123, .85), rgba(0, 137, 123, 1));
+  background: linear-gradient(to bottom, rgba(0, 137, 123, 0), rgba(0, 137, 123, .95), rgba(0, 137, 123, 1));
   margin: 0;
   position: absolute;
-  text-align: center;
+  /*text-align: right;*/
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  /*opacity: .25;*/
   transition: opacity .25s;
   color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 15px;
   opacity: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
 }
 
 #grid-box-hover:hover {
   opacity: 1;
 }
-
-/*#login {
-  color: #212121;
-}*/
-/*font-family: 'Pacifico', cursive;*/
-/*<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">*/
-/*font-family: 'Dancing Script', cursive;*/
