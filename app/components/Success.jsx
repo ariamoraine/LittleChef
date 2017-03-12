@@ -5,10 +5,25 @@ import Checkbox from 'material-ui/Checkbox'
 
 const styles = {
   block: {
-    maxWidth: 250,
+    minWidth: 250,
+    paddingBottom: 50,
   },
   checkbox: {
     marginBottom: 16,
+    alignItems: 'left'
+  },
+    page: {
+    marginLeft: 150,
+    marginRight: 150,
+    marginBottom: 50,
+  },
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    flexDirection: 'column',
+    alignItems: 'center',
+
   },
 }
 
@@ -16,17 +31,16 @@ export default function (props) {
   console.log("SUCCESS!", props)
     return (
       <div>
-        <Paper>
-          <h1>Little Chef just texted you a shopping list.</h1>
-          <h2>Now get shoppin'</h2>
-          <h2>Just in case heres a list</h2>
-          <p>{props.name}</p>
-          <img src={props.photo} />
+        <Paper style={styles.page} zDepth={4}>
+          <div style={styles.root}>
+          <h1 id="chefHeadTesk">Little Chef just texted you</h1>
+          <h2 id="subhead">Just in case here's a copy of that list</h2>
           <div style={styles.block}>
             {props.recipeIngredients.map((ingredient) => (
             <Checkbox key={ingredient.id} label={`${ingredient.amount}, ${ingredient.name}`}/>
               ))
             }
+          </div>
           </div>
         </Paper>
       </div>

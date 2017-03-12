@@ -28,14 +28,6 @@ const styles = {
   }
 }
 
-
-//<Link to={`products/${item.product.id}`}>
-//  <img className="image-responsive"
-//    src={item.product.photo} />
-// </Link>
-
-// onClick={(e) => handleCartAdd(e, user, selectedProduct)}
-
 export default function (props) {
 
     return (
@@ -66,5 +58,3 @@ export default function (props) {
       </div>
     )
 }
-
-// <div className='grid-box-hover'><h3>{product.name}<br />${product.price}</h3></div>

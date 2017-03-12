@@ -1,5 +1,5 @@
 * {
-
+  font-family: 'Slabo 27px', serif;
 }
 
 body {
@@ -12,6 +12,10 @@ body {
   font-size: 3em;
   box-shadow: inset 0 -0.125em white,
    inset 0 -0.2em #00897B;
+}
+
+#subhead {
+  font-family: 'Slabo 27px', serif;
 }
 
 #grid-box-hover {
