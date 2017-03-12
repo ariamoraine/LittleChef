@@ -30,6 +30,17 @@ const styles = {
 
 export default function (props) {
 
+    const sortedRecipes = props.sortedRecipes.filter(function(recipe) {
+      console.log("recipe", recipe.user_id)
+      console.log("AUTH ID", props.auth.id)
+      if(props.auth.id === recipe.user_id){
+        console.log("INSIDE IF")
+        return recipe
+      }
+    }) || {}
+
+    console.log("Props", props)
+    console.log("sortedRecipes", sortedRecipes)
     return (
       <div>
         <Paper style={styles.page} zDepth={4}>
@@ -40,7 +51,7 @@ export default function (props) {
                 cellHeight={200}
                 padding={1}
                 style={styles.gridList}>
-                {props.sortedRecipes.map((recipe) => (
+                {sortedRecipes.map((recipe) => (
                   <GridTile
                     key={recipe.id}
                     title={`Make ${recipe.name}`}

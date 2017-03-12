@@ -8,14 +8,14 @@ function sortRecipes (recipeArray) {
     return parseFloat(a.updated_at) - parseFloat(b.updated_at)
   })
   sortedRecipes[0]['featured'] = true
-  console.log("SORTED?", sortedRecipes)
   return sortedRecipes
 }
 
 export default connect(
   (state) => {
     return {
-      sortedRecipes: sortRecipes(state.recipe.allRecipes)
+      sortedRecipes: sortRecipes(state.recipe.allRecipes),
+      auth: state.auth
     }
   }, (dispatch) => {
     return {}
