@@ -32,7 +32,6 @@ const muiTheme = getMuiTheme({
 })
 
 const loadRecipes = (nextState, replace, done) => {
-  console.log(nextState)
   axios.get(`/api/recipes/`)
   .then(recipes => store.dispatch(receiveRecipes(recipes.data)))
   .then(() => done())
@@ -40,8 +39,6 @@ const loadRecipes = (nextState, replace, done) => {
 }
 
 const loadSingleRecipe = (nextState, replace, done) => {
-  console.log("nextState", nextState, "replace", replace)
-  console.log("ID??", nextState.params.recipeId)
   axios.get(`/api/recipes/${nextState.params.recipeId}`)
   .then(recipe => store.dispatch(singleRecipe(recipe.data)))
   .then(() => done())

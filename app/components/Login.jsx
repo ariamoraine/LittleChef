@@ -18,14 +18,10 @@ class Login extends React.Component{
   }
 
   handleLogin(event) {
-    console.log("handleLogin")
     this.props.login(event.target.username.value, event.target.password.value)
   }
 
   handleSignup(event) {
-    console.log("handleSignup")
-    console.log("this", this)
-    console.log("event", event.target)
     this.props.signup(event.target.username.value, event.target.password.value)
   }
 
@@ -70,8 +66,6 @@ class Login extends React.Component{
             <TextField fullWidth={true} floatingLabelText="Password" type="password" name="password" hintText="Password" />
           </div>
             <RaisedButton style={styles.loginButton} label="Login"  backgroundColor={teal600} fullWidth={true} type="submit" value="Login" />
-
-
         </form>
         }>
       </Paper>
