@@ -31,22 +31,21 @@ export default function (props) {
 
   props.sendSMS(props)
 
-  console.log("SUCCESS!", props)
-    return (
-      <div>
-        <Paper style={styles.page} zDepth={4}>
-          <div style={styles.root}>
-          <h1 id="chefHeadTesk">Little Chef just texted you</h1>
-          <h2 id="subhead">Just in case here's a copy of that list</h2>
-          <div style={styles.block}>
-            {props.recipeIngredients.map((ingredient) => (
-            <Checkbox key={ingredient.id} label={`${ingredient.amount}, ${ingredient.name}`}/>
-              ))
-            }
-          </div>
-          </div>
-        </Paper>
-      </div>
-    )
+  return (
+    <div>
+      <Paper style={styles.page} zDepth={4}>
+        <div style={styles.root}>
+        <h1 id="chefHeadTesk">Little Chef just texted you</h1>
+        <h2 id="subhead">Just in case here's a copy of that list</h2>
+        <div style={styles.block}>
+          {props.recipeIngredients.map((ingredient) => (
+          <Checkbox key={ingredient.id} label={`${ingredient.amount}, ${ingredient.name}`}/>
+            ))
+          }
+        </div>
+        </div>
+      </Paper>
+    </div>
+  )
 }
 

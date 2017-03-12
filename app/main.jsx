@@ -39,10 +39,8 @@ const loadRecipes = (nextState, replace, done) => {
 }
 
 const loadSingleRecipe = (nextState, replace, done) => {
-  console.log("INSIDE LOAD RECIPE")
   axios.get(`/api/recipes/${nextState.params.recipeId}`)
   .then(recipe => {
-    console.log("THIS IS RECIPE IN LOAD RECIPE", recipe);
     store.dispatch(singleRecipe(recipe.data))})
   .then(() => done())
   .catch(console.error)

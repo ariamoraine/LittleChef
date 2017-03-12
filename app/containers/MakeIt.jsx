@@ -17,9 +17,7 @@ function formatRecipeLines (ingArray) {
 
 function makeShoppingList (recipeInfo) {
   let shoppingList = ''
-  console.log(recipeInfo)
   shoppingList += `To make ${recipeInfo.recipeIngredients[0].recipe.name}, you will need...\n`
-  console.log(shoppingList)
   recipeInfo.recipeIngredients.forEach(function(recipe) {
     shoppingList += `${recipe.amount} of ${recipe.ingredient.name}\n`
   })
