@@ -1,5 +1,5 @@
 import React from 'react'
-import MakeIt from './MakeIt'
+import MakeIt from '../containers/MakeIt'
 import { Link } from 'react-router'
 //material UI things
 import Paper from 'material-ui/paper'

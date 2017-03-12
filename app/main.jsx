@@ -13,12 +13,12 @@ import {cyan500, darkBlack, white} from 'material-ui/styles/colors'
 
 //my stuff
 import store from './store'
+import { receiveRecipes, singleRecipe } from './reducers/recipe'
 import Recipes from './components/Recipes'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import AppContainer from './containers/AppContainer'
-import { receiveRecipes, singleRecipe } from './reducers/recipe'
-import MakeIt from './components/MakeIt'
+import MakeIt from './containers/MakeIt'
 
 injectTapEventPlugin();
 
