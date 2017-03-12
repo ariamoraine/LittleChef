@@ -52,17 +52,12 @@ export default function (props) {
                   <GridTile
                     key={recipe.id}
                     title={`Make ${recipe.name}`}
-                    // subtitle={<span><b>Last made </b>{recipe.updated_at}</span>}
-                    // subtitle={<span><b>Made: </b>{recipe.timesMade} times</span>}
                     subtitle={<Link to={`makeit/${recipe.id}`}><h1 tabIndex='0' id="grid-box-hover">Yum! Text me the recipe!</h1></Link>}
                     titlePosition="bottom"
                     titleBackground="linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.5) 70%,rgba(0,0,0,0) 100%)"
                     cols={recipe.featured ? 2 : 1}
-                    rows={recipe.featured ? 2 : 1}
-                  >
-
+                    rows={recipe.featured ? 2 : 1}>
                     <img src={recipe.photo} />
-
                   </GridTile>
                 ))}
               </GridList>
