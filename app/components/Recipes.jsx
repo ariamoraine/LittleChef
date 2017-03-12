@@ -37,16 +37,14 @@ export default function (props) {
         console.log("INSIDE IF")
         return recipe
       }
-    }) || {}
+    })
 
-    console.log("Props", props)
-    console.log("sortedRecipes", sortedRecipes)
     return (
       <div>
         <Paper style={styles.page} zDepth={4}>
           <div style={styles.root}>
             <span><h1 id="chefHeadTesk">Little Chef says you should...</h1></span>
-              <GridList
+              {sortedRecipes.length !== 0 ? <GridList
                 cols={2}
                 cellHeight={200}
                 padding={1}
@@ -63,7 +61,7 @@ export default function (props) {
                     <img src={recipe.photo} />
                   </GridTile>
                 ))}
-              </GridList>
+              </GridList> : <h1>Add some recipes because you don't have any</h1> }
             </div>
          </Paper>
       </div>
