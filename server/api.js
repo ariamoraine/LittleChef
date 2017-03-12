@@ -5,11 +5,12 @@ const api = module.exports = require('express').Router()
 const client = require('twilio')(env.SID, env.TOKEN)
 
 api
-  .get('/twilio', function (req, res, next) {
+  .post('/twilio', function (req, res, next) {
+    console.log("THIS IS REQ BODY", req.body)
     client.messages.create({
-      to: `+${req.body.phoneNum}`,
+      to: `+1${req.body.phone}`,
       from: `+${env.TWILIO_NUMBER}`,
-      body: 'THIS another test :)'
+      body: req.body.shoppingList
     }, function (err, message) {
       if (err) {
         console.log(err)

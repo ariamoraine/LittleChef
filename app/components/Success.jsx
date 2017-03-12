@@ -28,6 +28,9 @@ const styles = {
 }
 
 export default function (props) {
+
+  props.sendSMS(props)
+
   console.log("SUCCESS!", props)
     return (
       <div>
