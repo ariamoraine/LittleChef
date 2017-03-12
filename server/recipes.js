@@ -3,6 +3,8 @@ const sequelize = require('sequelize')
 const Recipe = require('APP/db/models/recipe')
 const RecipeLine = require('APP/db/models/recipelines')
 const recipeRouter = require('express').Router()
+const Ingredient = require('APP/db/models/ingredients')
+
 
 recipeRouter.get('/', (req, res, next) => {
   Recipe.findAll({})
@@ -12,14 +14,11 @@ recipeRouter.get('/', (req, res, next) => {
 })
 
 recipeRouter.get('/:recipeId', (req, res, next) => {
-  console.log("INSIDE THE ROUTER~~~~~~~~~~~~~~~~~")
-  console.log(req.params)
   RecipeLine.findAll({
     where: {
       recipe_id: req.params.recipeId
     }
   }).then(recipeLines => {
-    console.log(recipeLines)
     res.send(recipeLines)
   })
 })

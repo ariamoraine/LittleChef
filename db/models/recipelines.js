@@ -4,10 +4,8 @@ const db = require('APP/db');
 const RecipeLine = db.define('recipelines', {
   amount: Sequelize.STRING
 }, {
-  scopes: {
-    default: {
-      include: [{all: true}]
-    }
+  defaultScope: {
+    include: [{all: true}]
   }
 });
 

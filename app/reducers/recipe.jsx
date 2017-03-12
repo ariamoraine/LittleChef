@@ -13,6 +13,10 @@ const reducer = (state = initialState, action) => {
       newState.allRecipes = action.recipes
       break;
 
+    case "RECEIVE_RECIPE_INGREDIENTS":
+      newState.recipeIngredients = action.recipe
+      break;
+
     default: return state;
   }
 
@@ -25,6 +29,13 @@ export const receiveRecipes = (recipes) => {
   return {
     type: "RECEIVE_RECIPES",
     recipes
+  }
+}
+
+export const singleRecipe = (recipe) => {
+  return {
+    type: "RECEIVE_RECIPE_INGREDIENTS",
+    recipe
   }
 }
 
