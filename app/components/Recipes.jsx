@@ -1,11 +1,11 @@
 import React from 'react'
-
-import Recipe from './Recipe'
-
+import MakeIt from './MakeIt'
+import { Link } from 'react-router'
 //material UI things
 import Paper from 'material-ui/paper'
 import { GridList, GridTile } from 'material-ui/GridList'
-import IconButton from 'material-ui/IconButton'
+import IconButton from 'material-ui/IconButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const styles = {
   root: {
@@ -28,6 +28,14 @@ const styles = {
   }
 }
 
+
+//<Link to={`products/${item.product.id}`}>
+//  <img className="image-responsive"
+//    src={item.product.photo} />
+// </Link>
+
+// onClick={(e) => handleCartAdd(e, user, selectedProduct)}
+
 export default function (props) {
 
     return (
@@ -46,7 +54,7 @@ export default function (props) {
                     title={`Make ${recipe.name}`}
                     // subtitle={<span><b>Last made </b>{recipe.updated_at}</span>}
                     // subtitle={<span><b>Made: </b>{recipe.timesMade} times</span>}
-                    subtitle={<h1 id="grid-box-hover">Yum! Text me the recipe!</h1>}
+                    subtitle={<Link to={`makeit/${recipe.id}`}><h1 tabIndex='0' id="grid-box-hover">Yum! Text me the recipe!</h1></Link>}
                     titlePosition="bottom"
                     titleBackground="linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.5) 70%,rgba(0,0,0,0) 100%)"
                     cols={recipe.featured ? 2 : 1}

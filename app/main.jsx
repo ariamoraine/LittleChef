@@ -18,6 +18,7 @@ import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import AppContainer from './containers/AppContainer'
 import { receiveRecipes } from './reducers/recipe'
+import MakeIt from './components/MakeIt'
 
 injectTapEventPlugin();
 
@@ -38,6 +39,12 @@ const loadRecipes = (nextState, replace, done) => {
   .catch(console.error)
 }
 
+const loadSingleRecipe = (nextState, replace, done) => {
+  console.log("nextState", nextState, "replace", replace)
+  console.log("ID??", nextState.params.recipeId)
+}
+
+
 const ExampleApp = connect(
   ({ auth }) => ({ user: auth })
 ) (
@@ -57,6 +64,8 @@ render (
       <Route path="/" component={ExampleApp}>
         <IndexRedirect to="/recipes" />
         <Route path="/recipes" component={AppContainer} onEnter={loadRecipes} />
+        <Route path="/makeit/:recipeId"
+        component={MakeIt} onEnter={loadSingleRecipe}/>
       </Route>
     </Router>
   </Provider>,
