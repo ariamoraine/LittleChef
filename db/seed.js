@@ -26,6 +26,9 @@ const seedRecipeLines = () => db.Promise.map([
   {amount: '3lbs', recipe_id: '1', ingredient_id: '2'},
   {amount: '1/2', recipe_id: '3', ingredient_id: '3'},
   {amount: '1 cup', recipe_id: '4', ingredient_id: '4'},
+  {amount: '3 cup', recipe_id: '1', ingredient_id: '4'},
+  {amount: '4 lbs', recipe_id: '1', ingredient_id: '2'},
+  {amount: '3', recipe_id: '1', ingredient_id: '2'},
 ], line => db.model('recipelines').create(line));
 
 db.didSync

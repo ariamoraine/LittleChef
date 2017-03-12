@@ -17,7 +17,7 @@ import Recipes from './components/Recipes'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import AppContainer from './containers/AppContainer'
-import { receiveRecipes } from './reducers/recipe'
+import { receiveRecipes, singleRecipe } from './reducers/recipe'
 import MakeIt from './components/MakeIt'
 
 injectTapEventPlugin();
@@ -42,6 +42,10 @@ const loadRecipes = (nextState, replace, done) => {
 const loadSingleRecipe = (nextState, replace, done) => {
   console.log("nextState", nextState, "replace", replace)
   console.log("ID??", nextState.params.recipeId)
+  axios.get(`/api/recipes/${nextState.params.recipeId}`)
+  .then(recipe => store.dispatch(singleRecipe(recipe.data)))
+  .then(() => done())
+  .catch(console.error)
 }
 
 
