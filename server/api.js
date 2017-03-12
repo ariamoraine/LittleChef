@@ -7,7 +7,7 @@ const client = require('twilio')(env.SID, env.TOKEN)
 api
   .post('/twilio', function (req, res, next) {
     client.messages.create({
-      // to: `+1${req.body.phone}`,
+      to: `+1${req.body.phone}`,
       from: `+${env.TWILIO_NUMBER}`,
       body: req.body.shoppingList
     }, function (err, message) {

@@ -31,13 +31,11 @@ const styles = {
 export default function (props) {
 
     const sortedRecipes = props.sortedRecipes.filter(function(recipe) {
-      console.log("recipe", recipe.user_id)
-      console.log("AUTH ID", props.auth.id)
-      if(props.auth.id === recipe.user_id){
-        console.log("INSIDE IF")
-        return recipe
+        if (props.auth.id === recipe.user_id){
+          return recipe
+        }
       }
-    })
+    )
 
     return (
       <div>
