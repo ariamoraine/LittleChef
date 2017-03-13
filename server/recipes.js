@@ -23,4 +23,17 @@ recipeRouter.get('/:recipeId', (req, res, next) => {
   })
 })
 
+recipeRouter.post('/update', (req, res, next) => {
+  Recipe.findOne({
+    where: {
+      name: req.body.name
+    }
+  })
+  .then(recipe => {
+    recipe.update({
+      timesMade: recipe.timesMade += 1
+    })
+  })
+})
+
 module.exports = recipeRouter
