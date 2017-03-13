@@ -14,6 +14,10 @@ body {
    inset 0 -0.2em #00897B;
 }
 
+#addButton {
+  width: 100%;
+}
+
 #subhead {
   font-family: 'Slabo 27px', serif;
 }

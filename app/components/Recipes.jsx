@@ -4,8 +4,9 @@ import { Link } from 'react-router'
 //material UI things
 import Paper from 'material-ui/paper'
 import { GridList, GridTile } from 'material-ui/GridList'
-import IconButton from 'material-ui/IconButton';
-import RaisedButton from 'material-ui/RaisedButton';
+import IconButton from 'material-ui/IconButton'
+import RaisedButton from 'material-ui/RaisedButton'
+import { teal600 } from 'material-ui/styles/colors.js'
 
 const styles = {
   root: {
@@ -51,7 +52,7 @@ export default function (props) {
                   <GridTile
                     key={recipe.id}
                     title={`Make ${recipe.name}`}
-                    subtitle={<Link to={`makeit/${recipe.id}`}><h1 tabIndex='0' id="grid-box-hover">Yum! Text me the recipe!</h1></Link>}
+                    subtitle={<Link to={`/makeit/${recipe.id}`}><h1 tabIndex='0' id="grid-box-hover">Yum! Text me the recipe!</h1></Link>}
                     titlePosition="bottom"
                     titleBackground="linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.5) 70%,rgba(0,0,0,0) 100%)"
                     cols={recipe.featured ? 2 : 1}
@@ -60,6 +61,9 @@ export default function (props) {
                   </GridTile>
                 ))}
               </GridList> : <h1>Add some recipes because you don't have any</h1> }
+              <Link to={`/add`} id="addButton">
+              <RaisedButton label="Add a recipe"  backgroundColor={teal600} fullWidth={true} type="submit" value="Add a recipe" />
+              </Link>
             </div>
          </Paper>
       </div>

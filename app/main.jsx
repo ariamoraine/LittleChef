@@ -19,6 +19,7 @@ import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import AppContainer from './containers/AppContainer'
 import MakeIt from './containers/MakeIt'
+import AddRecipe from './containers/AddRecipe'
 
 injectTapEventPlugin();
 
@@ -32,7 +33,6 @@ const muiTheme = getMuiTheme({
 })
 
 const loadRecipes = (nextState, replace, done) => {
-  console.log("NEXTSTATE", store)
   axios.get(`/api/recipes/`)
   .then(recipes => store.dispatch(receiveRecipes(recipes.data)))
   .then(() => done())
@@ -69,6 +69,7 @@ render (
         <Route path="/recipes" component={AppContainer} onEnter={loadRecipes} />
         <Route path="/makeit/:recipeId"
         component={MakeIt} onEnter={loadSingleRecipe}/>
+        <Route path="/add" component={AddRecipe}/>
       </Route>
     </Router>
   </Provider>,
