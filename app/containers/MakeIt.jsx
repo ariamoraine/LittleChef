@@ -34,7 +34,6 @@ export default connect (state => ({
 }), (dispatch) => {
   return {
     sendSMS: function (smsInfo) {
-      console.log("SMS INFO ", smsInfo)
       axios.post('/api/twilio', smsInfo)
       axios.post('/api/recipes/update', smsInfo)
     }
