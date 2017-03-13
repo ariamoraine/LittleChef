@@ -12,12 +12,11 @@ export default class AddRecipe extends Component {
       nameEntered: false,
       recipeName: '',
       recipePhoto: '',
-      recipeIngredients: [{"amount": "2", "Ingredient": "Apples"},{"amount": "1", "Ingredient": "Banana"},{"amount": "5", "Ingredient": "Plums"}],
+      recipeIngredients: [],
       recipeTempIngredientAmount: '',
       recipeTempIngredient: '',
     }
 
-    this.handleChange = this.handleChange.bind(this)
     this.handleNameSave = this.handleNameSave.bind(this)
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handlePhotoChange = this.handlePhotoChange.bind(this)
@@ -27,27 +26,15 @@ export default class AddRecipe extends Component {
   }
 
   handleNameChange (event) {
-    console.log(event.target.value)
     this.setState({
       recipeName: event.target.value,
     });
   }
 
   handlePhotoChange (event) {
-    console.log(event.target.value)
     this.setState({
       recipePhoto: event.target.value
     })
-  }
-
-  handleChange(input, event) {
-    console.log(event)
-    const change = {};
-    const value = event
-    change[input] = value
-    console.log("input", input)
-    console.log(change)
-    this.setState(change)
   }
 
   handleIngredientAdd (event) {
@@ -78,15 +65,15 @@ export default class AddRecipe extends Component {
   render() {
     return (
       <Paper>
+        <h1 id="chefHeadTesk">Add a new recipe!</h1>
         <div>
           {
             this.state.nameEntered ?
-            <div>
-              <div> SOME STUFF</div>
-              <div>{this.state.recipeName}</div>
-              <div>{this.state.recipePhoto}</div>
-              <div>{this.state.recipeIngredients.map(element => {
-                return (<div><div>{`${element.amount} ${element.Ingredient}`}</div></div>)
+            <div id="subhead">
+              <div>{`Recipe Name: ${this.state.recipeName}`}</div>
+              <div>{`Recipe URL: ${this.state.recipePhoto}`}</div>
+              <div>{this.state.recipeIngredients.map((element, index) => {
+                return (<div key={index}><div>{`${index+1}. ${element.amount} ${element.Ingredient}`}</div></div>)
               })}</div>
               <TextField
                 id="recipeAmount"
@@ -109,30 +96,20 @@ export default class AddRecipe extends Component {
             </div>
             :
           <div>
-          <div onSubmit={(e) => {
-              e.preventDefault()
-              console.log("INSIDE ONDUBMIT")
-              //this.handleNameSave(e, this)
-            }
-            }>
-          <TextField
-            // value="recipeName"
-            hintText="Recipe Name"
-            onChange={this.handleNameChange}
-          />
-          <TextField
-            // value="recipePhoto"
-            id="NameField"
-            hintText="Recipe Name"
-            onChange={this.handlePhotoChange}
-          />
-          <RaisedButton label="Add a recipe"  backgroundColor={teal600} fullWidth={true} type="submit" value="Add" onClick={(e) => {
-              e.preventDefault()
-              console.log("INSIDE ONDUBMIT")
-              this.handleNameSave(e, this)
-            }}
+            <TextField
+              hintText="Recipe Name"
+              onChange={this.handleNameChange}
             />
-          </div>
+            <TextField
+              hintText="Recipe Photo URL"
+              onChange={this.handlePhotoChange}
+            />
+            <RaisedButton label="Add a recipe"  backgroundColor={teal600} fullWidth={true} type="submit" value="Add" onClick={(e) => {
+                e.preventDefault()
+                console.log("INSIDE ONDUBMIT")
+                this.handleNameSave(e, this)
+              }}
+              />
           </div>
         }
       </div>
